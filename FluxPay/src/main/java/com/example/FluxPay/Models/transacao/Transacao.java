@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 import java.time.LocalDateTime;
 
-@Table("transacao") // tudo minúsculo (Postgres)
+@Table("transacao")
 public class Transacao {
 
     @Id
@@ -15,6 +15,14 @@ public class Transacao {
     private TipoTransacao tipoTransacao;
     private String descricao;
     private LocalDateTime dataTransacao;
+
+    public Long Id() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;

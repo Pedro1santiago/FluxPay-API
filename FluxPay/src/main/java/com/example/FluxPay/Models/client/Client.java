@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Client {
 
     @Id
-    private Long clientID;
+    private Long clientId;
 
     private String nome;
     private Integer cpf;
@@ -16,11 +16,11 @@ public class Client {
     private String senha;
 
     public Long getClientID() {
-        return clientID;
+        return clientId;
     }
 
-    public void setClientID(Long clientID) {
-        this.clientID = clientID;
+    public void setClientID(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getNome() {
