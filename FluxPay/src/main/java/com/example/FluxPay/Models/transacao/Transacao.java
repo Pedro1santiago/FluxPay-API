@@ -2,26 +2,30 @@ package com.example.FluxPay.Models.transacao;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
+import java.time.LocalDateTime;
 
-@Table("Transacao")
+@Table("transacao") // tudo minúsculo (Postgres)
 public class Transacao {
 
     @Id
     private Long id;
 
-
-    private Long clientID;
+    private Long clientId;
     private Long valor;
     private TipoTransacao tipoTransacao;
     private String descricao;
+    private LocalDateTime dataTransacao;
 
     public Long getId() {
         return id;
     }
 
+    public Long getClientId() {
+        return clientId;
+    }
 
-    public Long getClientID() {
-        return clientID;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public Long getValor() {
@@ -40,7 +44,19 @@ public class Transacao {
         this.tipoTransacao = tipoTransacao;
     }
 
-    public String getDescricao() {return descricao;}
+    public String getDescricao() {
+        return descricao;
+    }
 
-    public void setDescricao(String descricao){ this.descricao = descricao;}
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public LocalDateTime getDataTransacao() {
+        return dataTransacao;
+    }
+
+    public void setDataTransacao(LocalDateTime dataTransacao) {
+        this.dataTransacao = dataTransacao;
+    }
 }
