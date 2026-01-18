@@ -1,0 +1,6 @@
+CREATE TABLE clients (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    api_key VARCHAR(255) NOT NULL UNIQUE,
+    status VARCHAR(30) NOT NULL
+);

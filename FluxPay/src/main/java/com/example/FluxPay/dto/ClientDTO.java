@@ -6,7 +6,7 @@ import com.example.FluxPay.models.ClientStatus;
 
 public record ClientDTO(Long id, String name, ClientStatus clientStatus) {
 
-    public static ClientDTO fromDTO(Client dto){
+    public static ClientDTO toDTO(Client dto){
         return new ClientDTO(dto.getClientId(), dto.getName(), dto.getStatus());
     }
 

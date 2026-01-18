@@ -1,12 +1,16 @@
 package com.example.FluxPay.models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+
 import java.time.LocalDateTime;
 
-@Table("transactions")
+@Entity(name = "transactions")
 public class Transaction {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Long clientId;

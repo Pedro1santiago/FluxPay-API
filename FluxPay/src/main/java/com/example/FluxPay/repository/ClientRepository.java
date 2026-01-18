@@ -2,12 +2,14 @@ package com.example.FluxPay.repository;
 
 import com.example.FluxPay.models.Client;
 import com.example.FluxPay.models.ClientStatus;
-import org.springframework.data.r2dbc.repository.Query;
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
-import reactor.core.publisher.Flux;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-public interface ClientRepository extends ReactiveCrudRepository<Client, Long> {
+import java.util.List;
+
+
+public interface ClientRepository extends JpaRepository<Client, Long> {
 
     @Query("SELECT * FROM clients WHERE clientStatus = 'ATIVO'")
-    Flux<Client> findActiveClients();
+    List<Client> findActiveClients();
 }
