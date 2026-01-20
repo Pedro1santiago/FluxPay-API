@@ -12,4 +12,7 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 
     @Query("SELECT * FROM clients WHERE clientStatus = 'ATIVO'")
     List<Client> findActiveClients();
+
+    @Query("SELECT * FROM clients")
+    List<Client> findAllClients();
 }
