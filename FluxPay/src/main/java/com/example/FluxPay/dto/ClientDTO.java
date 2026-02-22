@@ -10,11 +10,5 @@ public record ClientDTO(Long id, String name, ClientStatus clientStatus) {
         return new ClientDTO(dto.getClientId(), dto.getName(), dto.getStatus());
     }
 
-    public Client fromEntity(){
-        Client client = new Client();
-        client.setClientId(this.id);
-        client.setName(this.name);
-        client.setStatus(this.clientStatus);
-        return client;
-    }
+
 }

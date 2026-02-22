@@ -25,14 +25,4 @@ public record TransactionDTO(
         );
     }
 
-    public Transaction toEntity() {
-        Transaction transaction = new Transaction();
-        transaction.setId(this.id);
-        transaction.setClientId(this.clientId);
-        transaction.setAmount(this.amount);
-        transaction.setType(this.type);
-        transaction.setDescription(this.description);
-        transaction.setCreatedAt(this.createdAt != null ? this.createdAt : LocalDateTime.now());
-        return transaction;
-    }
 }
